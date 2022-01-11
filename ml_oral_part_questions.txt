@@ -1,0 +1,158 @@
+Appello 20/06/2018 
+
+ 
+
+Sartori: 
+
+Dimmi delle Discovery Association Rules, a cosa servono, definizioni di Support, Frequent Itemsets, Confidence, Apriori Algorithm (tutto); 
+
+Tipi di dato esistenti:
+(Categorici e Nominali, con relative Sottocategorie, tipi di trasformazioni ammissibili, operazioni statistiche che si possono fare per ognuno, cos’è la Mediana e cos’è la Media); 
+
+Concetti del Clustering, cos’è, misure per stabilire la “bontà” del clustering, metodo empirico per scegliere il “K” più adatto in un algoritmo come K-means 
+(dato un grafico con SSE nell’asse y e numero di “K” nell’asse X, scelgo il punto in cui SSE cala maggiormente e mi fermo se decresce piano piano); 
+
+Cosa facciamo con i dati “raw” prima di sottoporli agli algoritmi di Mining (tecniche di pulizia dati, campionamento, riduzione della dimensionalità, ecc...); 
+
+Definizioni di Standardizzazione e Normalizzazione, a cosa servono (per portare i dati ad avere range comuni e dunque annullare le diverse scale di valori su attributi diversi); 
+
+Classificazione Supervised, principali algoritmi e soluzioni (Neural Network, Perceptron, Decisional Tree, SVM).
+ Di alcuni, non ricordo quali, ha chiesto come funzionano e le principali problematiche; 
+
+Parlami degli alberi decisionali, over-underfitting, MDL per scegliere il DT “migliore”, come si costruisce il DT e come si stabilisce la lunghezza del DT con MDL (formula annessa); 
+
+Ensemble Method, che cos’è e come funziona; 
+
+Density Based Clustering, che cos’è, come funziona, algoritmi specifici funzionamento, quali sono i parametri di un algoritmo Density Based (DBSCAN mi pare ha chiesto) e 
+le proprietà per stabilire i punti appartenenti al cluster data la densità (Directly Density Reachable, Density Reachable, Density Connected); 
+
+Classificazione in generale e in particolare Naive Bayes Classifier (tutto sul Naive Bayes, anche LAplace Smoothing); 
+
+Tecniche principali per fare Outlier Detection; 
+
+Algoritmo Expectation Maximization e come funziona; 
+
+Association Rules, nel caso delle regole “multidimensional” 
+(item inseriti in colonne separate, non tutti insieme in ogni transazione),
+ come scriviamo gli item nelle colonne, quante sono le colonne, come segnaliamo che in una transazione ci sono solo certi elementi e non altri 
+(il numero di colonne è l’unione di tutti gli item, tolti i duplicati e ne segnaliamo la presenza o meno in ogni transazione con valori binari,
+ 0/1 e quindi le transazioni diventano vettori binari); 
+
+Da cosa è caratterizzato il k-means, che lo differenzia dagli algoritmi basati su densità 
+(k-means tende a non essere “locale”, quindi non è adatto a regioni non convesse e in più tende intrinsecamente a fare ipersfere mentre DBSCAN e DENCLUE sono più locali,
+ essendo basati su densità entro un certo raggio e numero di punti).  
+
+ 
+Sartori: Association Rules, Lift Chart, classificazione e classificatore bayesiano nel dettaglio, tutto e anche complessità;
+ cosa è l'overfitting e come lo si evita nel classificatore bayesiano 
+
+Sartori si concentra principalmente su un argomento e chiede di tutto su quest'ultimo dalle cose scritte sulle slide per passare poi a cose più particolari tipo la complessità.
+ Ad altri ha chiesto il clustering ed in particolare DBSCAN con ragionamenti sul cambiamento del valore di epsilon e del valore di minPoints
+ ad altri ha chiesto regole associative o ancora il perché della normalizzazione. 
+
+Sartori:  
+- DBSCAN: discorso generale, definizioni relative, in cosa consiste l'algoritmo. 
+- Quali sono gli indicatori di performance per il Clustering? Riguardo l'SSE possiamo, e se si come, avere informazioni sul numero di Cluster ottimale? 
+Visto che la risposta a questa domanda NON è scritta esplicitamente nelle slide la metto io qui:
+l'SSE non si può usare direttamente, ma si può avere un indizio se si considera che al limite, quando K = N, è uguale a 0 
+(perché si ha un clustering dove ogni oggetto è un cluster, cioè ogni oggetto è il centroide di sé stesso).
+Tuttavia, considerando il grafico a sinistra a pagina 65 di "DataMining-03-clustering-a", troviamo che all'inizio l'SSE cala molto e poi diventa più o meno stabile.
+Il K ottimale è dalle parti di questo "ginocchio". 
+Ora, non è per criticare, ma personalmente avrei gradito un discorso di questo genere nelle slide invece di due figure in una slide non commentata.
+A questo punto consiglierei a chi deve dare l'esame di elucubrare un po' anche sull'indice di silhouette. 
+
+Sartori: 
+-Reti neurali tutto, (si, sono 3 slide ma voleva sapere tutto di quelle 3 slide.) 
+-Come valutare un classificatore: accuratezza, specificità, test set. 
+  
+Sartori in realtà, rispetto a quando detto/letto in giro, l'ho trovato un po' più puntiglioso e "molesto".
+Fino a quando sono rimasto io gli argomenti classici e generali (regole associative-cluster-classificatori) sono stati chiesti molto meno
+rispetto a domande specifiche e che magari si tralasciano tranquillamente studiando. 
+Per il materiale bastano le slide, di sartori quelle in italiano dell'anno scorso hanno cose in più non richieste, ma sono più chiare mi sembra.
+ 
+- Sartori mi ha chiesto la classificazione, in generale e nel dettaglio gli Alberi Decisonali. 
+Poi mi ha chiesto la Cross Validation 
+Anche lui abbastanza tranquillo ma meno di ravaldi, fa sempre una domanda molto generale e una su un argomento preciso. 
+ 
+Come appunti mi son basato sulle slide e ho fatto un riassunto che comprende anche il modulo 2, quando mi torna la voglia lo sistemo dato che ci son alcuni errorini e lo metto sul drive 
+
+Sartori: 
+-Clustering in generale 
+-Clustering gerarchico 
+-Domanda sul numero di iterazioni minimo nel Single-Linkage, dovrebbe essere proporzionale a log2(N) era una domanda di ragionamento, non c'è nelle slides. 
+-Preprocessing dei dati in generale, ho parlato di aggregazione e riduzione della dimensionalità tramite PCA 
+Confermo che Sartori cerca di non rifare mai le stesse domande (a meno della introduzione generale), quindi verso la fine si va su argomenti meno scontati 
+
+Sartori mi ha chiesto Clustering in generale, Clustering Model Based con algoritmo EM (si, può chiederlo). 
+Poi valutazione di un modello di clustering con dataset supervisionato, indici di misura di Jaccard e Rand e la differenza tra questi ultimi 
+(cioè che Jaccard non considera i punti etichettati come DD) (si, può chiederli). 
+
+Sartori:  
+- Percettrone e SVM + una domanda di ragionamento sul percettrone 
+(se ho piu di due classi, come posso distinguerle usando un percettrone? risposta: non posso! devo usarne almeno 2. 
+Se per esempio avessi 4 classi linearmente separabili potreiusare un percettrone per individuare un piano e un secondo percettrone per individuarne un secondo. 
+Il risultato combinato dei due mi distingue una delle quattro classi) 
+- normalizzazione e standardizzazione: cosa sono, quali algoritmi di classificazione visti le usano (bayes) e quali invece non ne hanno bisogno (alberi) 
+
+Sartori: 
+Molto tranquillo, ti mette a tuo agio, però le cose vanno sapute bene e con un buon livello di approfondimento. 
+
+A me ha chiesto: 
+1) Association Rules con Apriori 
+2) Come possiamo sfruttare la gerarchia tra oggetti (esempio: Water fa parte del gruppo/gerarchia beverage, altri item saranno sotto altre gerarchie) nel contesto delle association rules 
+3) Come individuare regole ridondanti 
+
+Mio punto di vista: 
+Il Modulo 1 si prepara con le slides, ma bisogna dedicargli molto tempo e molta concentrazione (15/20 giorni direi) 
+
+ 
+
+20/06/2018 
+
+ 
+
+Sartori: 
+
+Dimmi delle Discovery Association Rules, a cosa servono, definizioni di Support, Frequent Itemsets, Confidence, Apriori Algorithm (tutto); 
+
+Tipi di dato esistenti 
+(Categorici e Nominali, con relative Sottocategorie, tipi di trasformazioni ammissibili, operazioni statistiche che si possono fare per ognuno, cos’è la Mediana e cos’è la Media); 
+
+Concetti del Clustering, cos’è, misure per stabilire la “bontà” del clustering, metodo empirico per scegliere il “K” più adatto in un algoritmo come K-means 
+(dato un grafico con SSE nell’asse y e numero di “K” nell’asse X, scelgo il punto in cui SSE cala maggiormente e mi fermo se decresce piano piano); 
+
+Cosa facciamo con i dati “raw” prima di sottoporli agli algoritmi di Mining (tecniche di pulizia dati, campionamento, riduzione della dimensionalità, ecc...); 
+
+Definizioni di Standardizzazione e Normalizzazione, a cosa servono (per portare i dati ad avere range comuni e dunque annullare le diverse scale di valori su attributi diversi); 
+
+Classificazione Supervised, principali algoritmi e soluzioni (Neural Network, Perceptron, Decisional Tree, SVM). 
+Di alcuni, non ricordo quali, ha chiesto come funzionano e le principali problematiche; 
+
+Parlami degli alberi decisionali, over-underfitting, MDL per scegliere il DT “migliore”, come si costruisce il DT e come si stabilisce la lunghezza del DT con MDL (formula annessa); 
+
+Ensemble Method, che cos’è e come funziona; 
+
+Density Based Clustering, che cos’è, come funziona, algoritmi specifici funzionamento, quali sono i parametri di un algoritmo Density Based (DBSCAN mi pare ha chiesto)
+ e le proprietà per stabilire i punti appartenenti al cluster data la densità (Directly Density Reachable, Density Reachable, Density Connected); 
+
+Classificazione in generale e in particolare Naive Bayes Classifier (tutto sul Naive Bayes, anche LAplace Smoothing); 
+
+Tecniche principali per fare Outlier Detection; 
+
+Algoritmo Expectation Maximization e come funziona; 
+
+Association Rules, nel caso delle regole “multidimensional” (item inseriti in colonne separate, non tutti insieme in ogni transazione),
+ come scriviamo gli item nelle colonne, quante sono le colonne, come segnaliamo che in una transazione ci sono solo certi elementi e non altri 
+(il numero di colonne è l’unione di tutti gli item, tolti i duplicati e ne segnaliamo la presenza o meno in ogni transazione con valori binari,
+ 0/1 e quindi le transazioni diventano vettori binari); 
+
+Da cosa è caratterizzato il k-means, che lo differenzia dagli algoritmi basati su densità 
+(k-means tende a non essere “locale”, quindi non è adatto a regioni non convesse e in più tende intrinsecamente a fare ipersfere mentre DBSCAN e DENCLUE sono più locali, 
+essendo basati su densità entro un certo raggio e numero di punti).  
+
+ 
+
+Sartori: Association Rules, Lift Chart. 
+
+
+ 
